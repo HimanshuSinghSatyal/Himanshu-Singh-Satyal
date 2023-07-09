@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DifferenceFinder = () => {
+const App= () => {
   const [listA, setListA] = useState('');
   const [listB, setListB] = useState('');
   const [differences, setDifferences] = useState([]);
@@ -12,31 +12,6 @@ const DifferenceFinder = () => {
     const presentOnlyInA = itemsA.filter(item => !itemsB.includes(item));
     const presentOnlyInB = itemsB.filter(item => !itemsA.includes(item));
     const presentInBoth = itemsA.filter(item => itemsB.includes(item));
-
-    //const presentInBoth = itemsA.filter(item => itemsB.includes(item));
-
-   // const presentInBoth = itemsA.filter(itemA => {
-  //return itemsB.some(itemB => {
-   // if (Array.isArray(itemA) && Array.isArray(itemB)) {
-   //   return itemA.some(nestedItemA => itemB.includes(nestedItemA));
-  //  }
-   // return itemA === itemB;
-  //});
-//});
-
-   // const presentInBoth = itemsA.reduce((result, itemA) => {
-  //if (Array.isArray(itemA)) {
-  //  const nestedItems = itemA.filter(nestedItemA =>
-  //    itemsB.some(itemB => Array.isArray(itemB) ? itemB.includes(nestedItemA) : itemB === nestedItemA)
-   // );
-  //  return [...result, ...nestedItems];
- // }
-  //if (itemsB.some(itemB => Array.isArray(itemB) ? itemB.includes(itemA) : itemB === itemA)) {
-   // return [...result, itemA];
-  //}
- // return result;
-//}, []);
-
 
     const combined = [...itemsA, ...itemsB];
 
@@ -99,4 +74,4 @@ const DifferenceFinder = () => {
   );
 };
 
-export default DifferenceFinder;
+export default App;
